@@ -1,0 +1,36 @@
+body, html {
+    height: 100%;
+    background-image: url("https://www.hdforums.com/wp-content/uploads/2016/01/HDForums-bucketList-640x457.jpg");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+form{
+    background-color: rgba(4,6,0,0.5);
+    padding: 40px;
+    -webkit-box-shadow: 9px 15px 39px -9px rgba(0,0,0,0.75);
+    -moz-box-shadow: 9px 15px 39px -9px rgba(0,0,0,0.75);
+    box-shadow: 9px 15px 39px -9px rgba(0,0,0,0.75);
+    color: white;
+}
+
+.panel-transparent {
+    background: none;
+}
+
+.panel-transparent .panel-heading{
+    background: rgba(4, 6, 0, 0.7);    
+}
+.panel-transparent .panel-footer{
+    background: rgba(4, 6, 0, 0.7);
+}
+
+.panel-transparent .panel-body{
+    background: rgba(4, 6, 0, 0.5);
+}
+
+.list-group {
+    background: rgba(46, 51, 56, 0.5);
+}
