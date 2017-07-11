@@ -1,0 +1,34 @@
+{% extends "index.html" %}
+
+{% block body %}
+<div class="container">
+    <div class="panel panel-primary panel-transparent">
+        <div class="panel-heading">
+            <h3 class="panel-title"><kbd>Your Bucket List</kbd></h3>
+        </div>
+        
+        <div class="panel-body">
+            <!-- List group -->
+            <ul class="list-group">
+                <li class="list-group-item"><strong>1. Climb Mt. Everest</strong><span class="badge badge-default badge-pill">Before I Marry</span><br>
+                    <kbd class ="btn btn-xs" >Mark as done</kbd>   <kbd class ="btn btn-xs" >Modify</kbd>   <kbd class ="btn btn-xs" >Delete</kbd>
+                </li>
+                <li class="list-group-item"><strong>2. Scuba Dive the Great Barrier Reef</strong><span class="badge badge-default badge-pill">Before I Marry</span><br>
+                    <kbd class ="btn btn-xs" >Mark as done</kbd>   <kbd class ="btn btn-xs" >Modify</kbd>   <kbd class ="btn btn-xs" >Delete</kbd>
+                </li>
+                <li class="list-group-item"><strong>3. Wrestle a Crocodile</strong><span class="badge badge-default badge-pill">Before I Marry</span><br>
+                    <kbd class ="btn btn-xs" >Mark as done</kbd>   <kbd class ="btn btn-xs" >Modify</kbd>   <kbd class ="btn btn-xs" >Delete</kbd>
+                </li>
+                <li class="list-group-item"><strong>4. Drive Across the Sahara in a Land Rover Defender</strong><span class="badge badge-default badge-pill">Honeymoon Week 2</span><br>
+                    <kbd class ="btn btn-xs" >Mark as done</kbd>   <kbd class ="btn btn-xs" >Modify</kbd>   <kbd class ="btn btn-xs" >Delete</kbd>
+                </li>                          
+            </ul>
+        </div>
+        <div class="panel-footer">
+            <h3 class="panel-title"><kbd><a href="create">Add New</a></kbd></h3>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}
