@@ -22,12 +22,3 @@ class Create(object):
         new_user = Create(email, user_name, password)
         authorized_users[user_name] = new_user
 
-
-demo = Create("you@example.com", "t_nane", "why-tell-you?")
-print()
-print(demo.email)
-print(demo.user_name)
-print(demo.password)
-print()
-print(authorized_users)
-print()
