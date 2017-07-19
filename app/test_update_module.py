@@ -46,3 +46,7 @@ class TestUpdateModule(unittest.TestCase):
         final_number_of_items = len(list(self.item.items.keys()))
         added_items = final_number_of_items - initial_number_of_items
         self.assertNotEqual(added_items, 2)
+
+
+if __name__ == 'main':
+    unittest.main()
