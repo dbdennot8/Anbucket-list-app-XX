@@ -9,4 +9,4 @@ python:
 # installing dependencies from requiremnets.txt
 install: "pip install -r requirements.txt"
 # running tests
-script: pytest
+script: nose
