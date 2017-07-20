@@ -1,7 +1,7 @@
 {% extends "index.html" %} {% block body %}
 <div class="container">
     <div>
-        <form method="GET" action=" {{ url_for('create') }} ">
+        <form method="POST" action="/create">
             <div class="form-group">
                 <label for="email"><kbd>Please enter a valid e-mail address</kbd></label>
                 <input type="email" class="form-control" name="email" placeholder="example@example.com">
@@ -22,4 +22,3 @@
 </div>
 
 {% endblock %}
-<!-- i saw something like that its the template...Fixing it requires what? i did the form separete -->
