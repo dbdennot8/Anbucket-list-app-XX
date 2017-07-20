@@ -50,25 +50,19 @@ class TestCreateModule(unittest.TestCase):
 
     def test_user_name_not_duplicated(self):
         '''Tests that a new user does not register using an existing user name'''
-        initial_no_of_users = len(list(self.user.registered_users.keys()))
         new_user = self.user.register_new_user(
             "me@andela.com", "dennot8", "why-me-tell-you?")
         new_user_2 = self.user.register_new_user(
-            "me@andela.com", "dennot8", "why-me-tell-you?")
-        final_no_of_users = len(list(self.user.registered_users.keys()))
-        users_added = final_no_of_users - initial_no_of_users
-        self.assertNotEqual(users_added, 2)
+            "metoo@andela.com", "dennot8", "why-me-tell-you?")
+        self.assertNotIn(new_user_2, self.user.registered_users)
 
     def test_email_not_duplicated(self):
         '''Tests that a new user does not register using an existing email address'''
-        initial_no_of_users = len(list(self.user.registered_users.keys()))
         new_user = self.user.register_new_user(
             "me@andela.com", "dennot8", "why-me-tell-you?")
         new_user_2 = self.user.register_new_user(
             "me@andela.com", "khalegi", "why-me-tell-you?")
-        final_no_of_users = len(list(self.user.registered_users.keys()))
-        users_added = final_no_of_users - initial_no_of_users
-        self.assertNotEqual(users_added, 2)
+        self.assertNotIn(new_user_2, self.user.registered_users)
 
 
 if __name__ == 'main':
