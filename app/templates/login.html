@@ -4,17 +4,17 @@
 
 <div class="container">
     <div>
-        <form>
+        <form method="POST" action="/login">
             <div class="form-group">
-                <label for="exampleInputEmail1">Email address</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="example@example.com">
+                <label for="exampleInputUsername"><kbd>Your User Name</kbd></label>
+                <input type="text" class="form-control" value="" name="user_name" placeholder="@user-name">
             </div>
             <div class="form-group">
-                <label for="exampleInputPassword1">Password</label>
-                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="*********">
+                <label for="exampleInputPassword1"><kbd>Password</kbd></label>
+                <input type="password" class="form-control" valuye="" name="password" placeholder="*********">
             </div>
-            <button type="submit" class="btn btn-default">Submit</button>
-            <button type="submit" class="btn btn-default"><a href="create">Forgot Password?</a></button>
+            <input type="submit" value="Submit" class="btn btn-default">
+            <button class="btn btn-default"><a href="register">Forgot Password?</a></button>
         </form>
     </div>
     <br>

@@ -3,24 +3,20 @@
 {% block body %}
 <div class="container">
     <div>
-        <form>
+        <form method="GET" action = " {{ url_for('create') }} ">
             <div class="form-group">
-                <label for="exampleInputEmail1">Please enter a valid e-mail address</label>
+                <label for="exampleInputEmail1"><kbd>Please enter a valid e-mail address</kbd></label>
                 <input type="email" class="form-control" id="exampleInputEmail1" placeholder="example@example.com">
             </div>
             <div class="form-group">
-                <label for="exampleInputEmail1">Please enter a user-name of your preference</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="@<<user-name>>">
+                <label for="exampleInputEmail1"><kbd>Please enter a user-name of your preference</kbd></label>
+                <input type="text" class="form-control" name="exampleInputUserName" placeholder="user-name">
             </div>
             <div class="form-group">
-                <label for="exampleInputPassword1">Please input a strong password</label>
-                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="*********">
+                <label for="exampleInputPassword1"><kbd>Please input a strong password</kbd></label>
+                <input type="password" class="form-control" name="exampleInputPassword1" placeholder="*********">
             </div>
-            <div class="form-group">
-                <label for="exampleInputPassword1">Please re-type your password</label>
-                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Use same password as above">
-            </div>
-            <button type="submit" class="btn btn-default"><a href="create">Submit</a></button>
+            <button type="submit" class="btn btn-default">Submit</button>
         </form>
     </div>
     <br>
@@ -28,3 +24,4 @@
 </div>
 
 {% endblock %}
+<!-- i saw something like that its the template...Fixing it requires what? i did the form separete -->
