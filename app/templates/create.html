@@ -11,16 +11,16 @@
             
             <div class="panel-body">
                 <div>
-                    <form>
+                    <form method="post" action=" {{ url_for('view')  }} ">
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Item Title</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Not More than 144 Characters">
+                            <label for="Title"><kbd>Item Title</kbd></label>
+                            <input type="text" class="form-control" id="Title" placeholder="Not More than 144 Characters">
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputPassword1">Badge (Shows Approx. Due Date)</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Not More than 25 Characters">
+                            <label for="Badge"><kbd>Badge (Shows Approx. Due Date)</kbd></label>
+                            <input type="text" class="form-control" id="Badge" placeholder="Not More than 25 Characters">
                         </div>
-                        <button type="submit" class="btn btn-default"><a href="view">Save To Bucket List</a></button>
+                        <button type="submit" class="btn btn-default">Save To Bucket List</button>
                     </form>
                 </div>
 
