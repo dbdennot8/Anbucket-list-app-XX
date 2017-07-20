@@ -10,4 +10,4 @@ install:
   - pip install -r requirements.txt
 
 script: 
-   - python test_cases_1.py test_cases_2.py
+   - python app/test_cases_1.py app/testcases_2.py
