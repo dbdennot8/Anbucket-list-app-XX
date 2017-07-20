@@ -1,12 +1,10 @@
 language: python
 python:
-  - "3.2"
-  - "3.3"
-  - "3.4"
-  - "3.5"
   - "3.6"
+os: 
+  windows10
 
 # installing dependencies from requiremnets.txt
-install: "pip install -r requirements.txt"
+install: true
 # running tests
-script: nose
+script: bundle exec thor build
