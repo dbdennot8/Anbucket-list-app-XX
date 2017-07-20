@@ -9,7 +9,7 @@ aspirations, i.e., the things on their bucket list. It basically shows a list of
 The App's UI has the following pages:
 
  * A Register page - designed to allow new users to create an account, which is necessary 
- 	before a user can Create a bucket list or View one. Features a form that takes two instances on a valid email address and two instances of a password
+ 	before a user can Create a bucket list or View one. Features a form that takes  a valid email address, a user-name and two instances of a password
     
  * A Login page - Allows user to access the app, and subsequently to access their bucket list. Features a form that takes an email address and a password.
  
