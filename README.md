@@ -17,7 +17,6 @@ The App's UI has the following pages:
  
  * A Create page -user can add new items to the bucket list. Requires user to fill a form with provision for item title (a small description of the achievement aspired to), and a badge (a tag, estimating the due date for the achievement)
  
-The Back-end is under development, being developed using the Flask microframework.
 
 ## Application Development Prerequisites
 The App was developed using the following:
@@ -25,3 +24,8 @@ The App was developed using the following:
  *  HTML/CSS/Bootstrap and JS- in designing the UI
  *  Flask microframework - for writing the App's backend framework
  *  Visual Studio Code editor
+
+ ##To run app:
+ * Install all dependencies in requirements.txt, preferably in a virtualenv
+ * Run the app's main code file, the views.py
+ * Access `localhost:5000` on your browser. And voila. The links in the app's UI work just fine.
