@@ -38,14 +38,11 @@ class TestUpdateModule(unittest.TestCase):
 
     def test_item_not_duplicated(self):
         '''Test that method does not duplicate bucket list items'''
-        initial_number_of_items = len(list(self.item.items.keys()))
         new_item = self.item.add_bucket_list_item(
             "Sail the Atlantic", "Before I Marry")
         new_item_2 = self.item.add_bucket_list_item(
             "Sail the Atlantic", "Before I Marry")
-        final_number_of_items = len(list(self.item.items.keys()))
-        added_items = final_number_of_items - initial_number_of_items
-        self.assertNotEqual(added_items, 2)
+        self.assertNotIn(new_item_2, self.item.items)
 
 
 if __name__ == 'main':
