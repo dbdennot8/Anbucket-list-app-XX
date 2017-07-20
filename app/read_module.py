@@ -13,5 +13,4 @@ class Read(Update):
 
     def view_items(self):
         '''Display contents of Bucket List'''
-        for item in self.items:
-            return list(self.items.values())
+        return list(self.items.values())
