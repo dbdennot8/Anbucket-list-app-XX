@@ -9,10 +9,7 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     '''Returns rendered Homepage(Index page) of the app'''
-    if not session.get('logged_in'):
-        return render_template('index.html')
-    else:
-        return "Welcome to le BucketListApp"
+    return render_template('index.html')
 
 
 @app.route('/register', methods=['GET', 'POST'])
@@ -20,9 +17,9 @@ def register():
     '''Registers a new user, allowing them to use app'''
 
     if request.method == 'POST':
-        email = request.form['exampleInputEmail1']
-        user_name = request.form['exampleInputUserName']
-        password = request.form['exampleInputPassword1']
+        email = request.form['email']
+        user_name = request.form['user_name']
+        password = request.form['password']
         if user_name and password and email:
             user = User(email, user_name, password)
             user.register_user()
@@ -33,32 +30,36 @@ def register():
         return render_template('register.html')
 
 
-@app.route('/login', methods=['POST'])
+@app.route('/login', methods=['GET', 'POST'])
 def login():
     '''Logs in existing user to app'''
-    email = None
-    user_name = request.form['exampleInputUsername']
-    password = request.form['exampleInputPassword1']
-    if user_name and password:
-        user = User(email, user_name, password)
-        if user_name in list(user.registered_users.keys()):
-            if password == user.registered_users[user_name].password:
-                session['logged_in'] = True
+    if request.method == 'POST':
+        email = None
+        user_name = request.form['user_name']
+        password = request.form['password']
+        if user_name and password:
+            user = User(email, user_name, password)
+            if user_name in list(user.registered_users.keys()):
+                if password == user.registered_users[user_name].password:
+                    session['logged_in'] = True
+                else:
+                    flash('You entered the wrong password.')
+                return redirect(url_for('view'))
+
             else:
-                flash('You entered the wrong password.')
-                
+                return render_template('login.html')
         else:
-            render_template('login.html')
+            return render_template('login.html')
     else:
-        render_template('login.html')
+        return render_template('login.html')
 
 
 @app.route('/create', methods=['GET', 'POST'])
 def create():
     '''Returns rendered Create page'''
     if request.method == 'POST':
-        title = request.form['exampleInputTitle']
-        badge = request.form['exampleInputBadge']
+        title = request.form['Title']
+        badge = request.form['Badge']
         if title and badge:
             new_item = BucketList(title, badge)
             new_item.view_items()

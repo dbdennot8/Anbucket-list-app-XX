@@ -5,16 +5,16 @@
     <div>
         <form method="GET" action = " {{ url_for('create') }} ">
             <div class="form-group">
-                <label for="exampleInputEmail1"><kbd>Please enter a valid e-mail address</kbd></label>
-                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="example@example.com">
+                <label for="email"><kbd>Please enter a valid e-mail address</kbd></label>
+                <input type="email" class="form-control" name="email" placeholder="example@example.com">
             </div>
             <div class="form-group">
-                <label for="exampleInputEmail1"><kbd>Please enter a user-name of your preference</kbd></label>
-                <input type="text" class="form-control" name="exampleInputUserName" placeholder="user-name">
+                <label for="user_name"><kbd>Please enter a user-name of your preference</kbd></label>
+                <input type="text" class="form-control" name="user_name" placeholder="user-name">
             </div>
             <div class="form-group">
-                <label for="exampleInputPassword1"><kbd>Please input a strong password</kbd></label>
-                <input type="password" class="form-control" name="exampleInputPassword1" placeholder="*********">
+                <label for="password"><kbd>Please input a strong password</kbd></label>
+                <input type="password" class="form-control" name="password" placeholder="*********">
             </div>
             <button type="submit" class="btn btn-default">Submit</button>
         </form>
