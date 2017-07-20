@@ -1,9 +1,7 @@
-{% extends "index.html" %}
-
-{% block body %}
+{% extends "index.html" %} {% block body %}
 <div class="container">
     <div>
-        <form method="GET" action = " {{ url_for('create') }} ">
+        <form method="GET" action=" {{ url_for('create') }} ">
             <div class="form-group">
                 <label for="email"><kbd>Please enter a valid e-mail address</kbd></label>
                 <input type="email" class="form-control" name="email" placeholder="example@example.com">
@@ -20,7 +18,7 @@
         </form>
     </div>
     <br>
-    <p><kbd>Already have an account? <a href="login">Sign In Here</a></kbd></p>          
+    <p><kbd>Already have an account? <a href="login">Sign In Here</a></kbd></p>
 </div>
 
 {% endblock %}

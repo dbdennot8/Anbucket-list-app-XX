@@ -1,6 +1,4 @@
-{% extends "index.html" %}
-
-{% block body %}
+{% extends "index.html" %} {% block body %}
 
 <div class="container">
     <div>
@@ -8,10 +6,10 @@
             <div class="panel-heading">
                 <h3 class="panel-title"><kbd>Add New item To Bucket List</kbd></h3>
             </div>
-            
+
             <div class="panel-body">
                 <div>
-                    <form method="post" action=" {{ url_for('view')  }} ">
+                    <form method="post" action="/view">
                         <div class="form-group">
                             <label for="Title"><kbd>Item Title</kbd></label>
                             <input type="text" class="form-control" id="Title" placeholder="Not More than 144 Characters">
