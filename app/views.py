@@ -70,16 +70,16 @@ def create():
 @app.route('/view', methods=["GET", "POST"])
 def view():
     '''Returns rendered View page'''
-    if request.method == "POST":
-        return redirect(url_for('view'))
-    return render_template('view.html')
+    # if request.method == "GET":
+    #     return redirect(url_for('view'))
+    return render_template(('view.html', item.title)
 
 
-@app.route('/logout')
-def logout():
-    '''End user session'''
-    session.pop('user_name', None)
-    return redirect(url_for('index.html'))
+# @app.route('/logout')
+# def logout():
+#     '''End user session'''
+#     session.pop('user_name', None)
+#     return redirect(url_for('index.html'))
 
 
 app.secret_key = 'why-would-i-tell-you-this?'

@@ -13,18 +13,6 @@ class TestBucketListClass(unittest.TestCase):
         '''Initializes an instance of the class View for testing'''
         self.item = BucketList("Sail the Atlantic", "Before I Marry")
 
-    def test_attribute_title(self):
-        '''Test whether the bucket list item has a title as an attribute'''
-        expected = 'Sail the Atlantic'
-        actual = self.item.title
-        self.assertEqual(actual, expected)
-
-    def test_attribute_badge(self):
-        '''Test whether item has a badge as one of its attributes'''
-        expected = 'Before I Marry'
-        actual = self.item.badge
-        self.assertEqual(actual, expected)
-
     def test_create_bucket_list_item_1(self):
         '''Test that create_an_item method appends to record of items'''
         self.item.create_an_item()
