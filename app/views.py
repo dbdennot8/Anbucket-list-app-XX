@@ -1,6 +1,6 @@
 '''Bucket list application'''
 
-from flask import Flask, flash, session, render_template, escape, url_for, redirect, request
+from flask import Flask, flash, session, render_template, url_for, redirect, request
 from app_functionality import User, BucketList
 
 app = Flask(__name__)
@@ -9,8 +9,6 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     '''Returns rendered Homepage(Index page) of the app'''
-    if 'user_name' in session:
-        return 'You are logged in as %s ' % escape(session['user_name'])
     return render_template('index.html')
 
 
@@ -19,7 +17,7 @@ def register():
     '''Registers a new user, allowing them to use app'''
     if request.method == 'POST':
         email = request.form['email']
-        user_name = request.form['user_name']
+        session['user_name'] = user_name = request.form['user_name']
         password = request.form['password']
         if user_name and password and email:
             user = User(email, user_name, password)
@@ -55,24 +53,25 @@ def login():
 def create():
     '''Returns rendered Create page'''
     if request.method == 'POST':
-        title = request.form['Title']
-        badge = request.form['Badge']
+        title = session['title'] = request.form['Title']
+        badge = session['badge'] = request.form['Badge']
         if title and badge:
             new_item = BucketList(title, badge)
-            new_item.view_items()
-            return redirect(url_for('view'))
-        else:
-            return render_template('create.html')
-    else:
-        return render_template('create.html')
+            new_item.add_item_to_list()
+        return render_template(('view.html'))
+
+    return render_template('create.html')
 
 
-@app.route('/view', methods=["GET", "POST"])
+@app.route('/view', methods=['GET', 'POST'])
 def view():
     '''Returns rendered View page'''
     if request.method == "POST":
-        return redirect(url_for('view'))
-    return render_template('view.html')
+        title = session.get('title')
+        badge = session.get('badge')
+        return (render_template('view.html'), title, badge)
+
+    return render_template(('create.html'))
 
 
 @app.route('/logout')
