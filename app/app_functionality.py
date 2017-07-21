@@ -55,13 +55,6 @@ class BucketList(object):
             self.bucket_list_items[self.title] = new_item
             return new_item
 
-    def view_items(self):
-        '''Display all items in a bucket list'''
-        list_of_items = []
-        for key in self.bucket_list_items:
-            list_of_items.append(self.bucket_list_items[key])
-            return list_of_items
-
     def delete_item(self):
         '''Removes a given item from the bucket list'''
         if self.title in list(self.bucket_list_items.keys()):

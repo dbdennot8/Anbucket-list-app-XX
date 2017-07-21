@@ -7,11 +7,13 @@
 
         <div class="panel-body">
             <!-- List group -->
-            <ul class="list-group">
-                <li class="list-group-item"><strong>{{ title }}</strong><span class="badge badge-default badge-pill">{{ badge }}</span><br>
-                    <kbd class="btn btn-xs">Mark as done</kbd> <kbd class="btn btn-xs">Modify</kbd> <kbd class="btn btn-xs">Delete</kbd>
-                </li>
-            </ul>
+            <form method="POST" action=".">
+                <ul class="list-group">
+                    <li class="list-group-item"><strong>1 - {{ title }}</strong><span class="badge badge-default badge-pill">{{ badge }}</span><br>
+                        <kbd class="btn btn-xs">Mark as done</kbd> <kbd class="btn btn-xs">Modify</kbd> <kbd class="btn btn-xs">Delete</kbd>
+                    </li>
+                </ul>
+            </form>
         </div>
         <div class="panel-footer">
             <h3 class="panel-title"><kbd><a href="create">Add New</a></kbd></h3>
