@@ -28,6 +28,13 @@ class User(object):
             self.all_registered_emails.append(self.email)
             return new_user
 
+    def unregister_a_user(self):
+        '''Method removes user from list of authorised users'''
+        if self.user_name in list(self.registered_users.keys()):
+            del self.registered_users[self.user_name]
+        else:
+            pass
+
 
 class BucketList(object):
     '''Boilerplate for creating a bucket list'''
@@ -39,7 +46,7 @@ class BucketList(object):
         # Initialize a record of items in bucket list
         self.bucket_list_items = {}
 
-    def create_an_item(self):
+    def add_item_to_list(self):
         '''Append an item to the list of bucket list items'''
         if self.title in list(self.bucket_list_items.keys()):
             return 'That item is already in your bucket list'
@@ -54,7 +61,6 @@ class BucketList(object):
         for key in self.bucket_list_items:
             list_of_items.append(self.bucket_list_items[key])
             return list_of_items
-
 
     def delete_item(self):
         '''Removes a given item from the bucket list'''

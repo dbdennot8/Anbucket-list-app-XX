@@ -9,8 +9,6 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     '''Returns rendered Homepage(Index page) of the app'''
-    if 'user_name' in session:
-        return 'You are logged in as %s ' % escape(session['user_name'])
     return render_template('index.html')
 
 
@@ -55,8 +53,8 @@ def login():
 def create():
     '''Returns rendered Create page'''
     if request.method == 'POST':
-        title = request.form['Title']
-        badge = request.form['Badge']
+        title = session['title'] = request.form['Title']
+        badge = session['badge'] = request.form['Badge']
         if title and badge:
             new_item = BucketList(title, badge)
             new_item.view_items()
@@ -70,10 +68,11 @@ def create():
 @app.route('/view', methods=["GET", "POST"])
 def view():
     '''Returns rendered View page'''
-    title = 
-    if request.method == "GET":
-        return redirect(url_for('view'))
-    return render_template('view.html')
+    if request.method == "POST":
+        title = session.get('title')
+        badge = session.get('badge')
+            # return redirect(url_for('view'), title, badge)
+        return render_template(('view.html', title, badge))
 
 
 @app.route('/logout')
