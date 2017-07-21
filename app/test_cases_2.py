@@ -2,7 +2,7 @@
 
 # 2. Testing the BucketList class
 import unittest
-from app_functionality import BucketList
+from app_functionality import BucketList, bucket_list_items
 
 
 class TestBucketListClass(unittest.TestCase):
@@ -17,14 +17,14 @@ class TestBucketListClass(unittest.TestCase):
         '''Test that create_an_item method appends to record of items'''
         self.item.add_item_to_list()
         self.assertIn("Sail the Atlantic", list(
-            self.item.bucket_list_items.keys()))
+            bucket_list_items.keys()))
 
     def test_add_items_to_list_2(self):
         '''Test that the create_an_item method does not duplicate items'''
         item_2 = BucketList("Sail the Atlantic", "Before I Marry")
-        items_before = len(self.item.bucket_list_items)
+        items_before = len(bucket_list_items)
         item_2.add_item_to_list()
-        items_after = len(self.item.bucket_list_items)
+        items_after = len(bucket_list_items)
         self.assertEqual(items_before, items_after)
 
     def test_delete_method(self):
@@ -32,12 +32,11 @@ class TestBucketListClass(unittest.TestCase):
         self.item.add_item_to_list()
         item_2 = BucketList("Marry the Queen", "Not Today")
         item_2.add_item_to_list()
-        items_before_delete = len(list(self.item.bucket_list_items))
+        items_before_delete = len(list(bucket_list_items))
         self.item.delete_item()
-        items_after_delete = len(list(self.item.bucket_list_items))
+        items_after_delete = len(list(bucket_list_items))
         difference = items_before_delete - items_after_delete
-        self.assertNotIn(self.item,
-                         self.item.bucket_list_items)
+        self.assertNotIn(self.item, bucket_list_items)
         self.assertEqual(difference, 1)
 
 
