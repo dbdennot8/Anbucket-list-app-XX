@@ -29,7 +29,7 @@ class TestBucketListClass(unittest.TestCase):
     def test_delete_method(self):
         '''Test that method removes item from bucket list items'''
         item_3 = BucketList("Marry the Queen", "Not Today")
-        self.item.delete_item()
+        item_3.delete_item()
         self.assertNotIn(item_3,
                          self.item.bucket_list_items)
 

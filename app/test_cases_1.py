@@ -16,19 +16,19 @@ class TestUserModule(unittest.TestCase):
 
     def test_register_user_method_1(self):
         '''Test whether new user is appended to dict of authorized users'''
-        response = self.user.register_user()
-        self.assertIn(response.user_name, list(
+        registered = self.user.register_user()
+        self.assertIn(registered.user_name, list(
             self.user.registered_users.keys()))
 
     def test_register_user_method_2(self):
         '''Tests that a new user does not register using an existing user name'''
-        new_user = self.user.register_user()
+        self.user.register_user()
         new_user_2 = self.user.register_user()
         self.assertNotIn(new_user_2, self.user.registered_users)
 
     def test_register_user_method_3(self):
         '''Tests that a new user does not register using an existing email address'''
-        new_user = self.user.register_user()
+        self.user.register_user()
         new_user_2 = self.user.register_user()
         self.assertNotIn(new_user_2, self.user.registered_users)
 
